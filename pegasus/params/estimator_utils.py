@@ -22,11 +22,17 @@ from pegasus.ops import public_parsing_ops
 from tensor2tensor.utils import adafactor
 import tensorflow as tf
 
-from tensorflow.contrib import summary as contrib_summary
-from tensorflow.contrib import tpu as contrib_tpu
-from tensorflow.contrib.tpu.python.tpu import tpu_config
-from tensorflow.contrib.tpu.python.tpu import tpu_estimator
-from tensorflow.contrib.tpu.python.tpu import tpu_optimizer
+## from tensorflow.contrib import summary as contrib_summary
+from tensorflow import summary as contrib_summary
+## from tensorflow.contrib import tpu as contrib_tpu
+from tensorflow.compat.v1 import tpu as contrib_tpu
+## from tensorflow.contrib.tpu.python.tpu import tpu_config
+## from tensorflow.contrib.tpu.python.tpu import tpu_estimator
+## from tensorflow.contrib.tpu.python.tpu import tpu_optimizer
+
+from tensorflow.compat.v1.estimator import tpu as tpu_config
+from tensorflow.compat.v1.estimator import tpu as tpu_estimator
+from tensorflow.compat.v1 import tpu as tpu_optimizer
 
 
 def create_estimator(master,

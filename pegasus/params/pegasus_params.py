@@ -22,7 +22,8 @@ from pegasus.eval import text_eval
 from pegasus.models import transformer
 from pegasus.ops import public_parsing_ops
 from pegasus.params import registry
-from tensorflow.contrib import training as contrib_training
+## from tensorflow.contrib import training as contrib_training
+from tensorboard.plugins.hparams import api as contrib_training
 
 # Shift of special tokens id in the vocab file.
 # I.e. the starting id of ordinary tokens in the vocab file.
@@ -35,7 +36,7 @@ TASK_START_ID = 50
 def pegasus_large_params(param_overrides):
   """Params for PegasusLarge."""
 
-  hparams = contrib_training.HParams(
+  hparams = contrib_training.HParam(
       train_pattern="tfds_transformed:common_crawl-train",
       dev_pattern="tfds_transformed:common_crawl-validation",
       test_pattern="tfds_transformed:common_crawl-test",

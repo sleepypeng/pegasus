@@ -14,13 +14,17 @@
 
 """Binary to train a model and to write eval summaries during training."""
 
+import sys
+sys.path.extend(['/Users/kunpeng5/PycharmProjects/pegasus'])
+
 from pegasus.data import infeed
 from pegasus.params import all_params  # pylint: disable=unused-import
 from pegasus.params import estimator_utils
 from pegasus.params import registry
 import tensorflow as tf
 
-flags = tf.flags
+## flags = tf.flags
+flags = tf.compat.v1.flags
 FLAGS = flags.FLAGS
 
 flags.DEFINE_string("master", "",
@@ -91,4 +95,5 @@ def main(_):
 
 if __name__ == "__main__":
   flags.mark_flags_as_required(["params", "model_dir"])
-  tf.app.run(main)
+  ## tf.app.run(main)
+  tf.compat.v1.app.run(main)

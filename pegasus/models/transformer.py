@@ -32,7 +32,8 @@ from pegasus.layers import timing
 from pegasus.layers import transformer_block
 from pegasus.models import base
 import tensorflow as tf
-from tensorflow.contrib import layers as contrib_layers
+## from tensorflow.contrib import layers as contrib_layers
+from tensorflow.keras import layers as contrib_layers
 
 
 class TransformerEncoderDecoderModel(base.BaseModel):

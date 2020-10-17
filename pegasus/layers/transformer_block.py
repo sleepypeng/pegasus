@@ -25,7 +25,8 @@ Notations:
 
 from pegasus.layers import attention
 import tensorflow as tf
-from tensorflow.contrib import layers as contrib_layers
+## from tensorflow.contrib import layers as contrib_layers
+from tensorflow.keras import layers as contrib_layers
 
 
 class TransformerBlock(object):
